@@ -12,8 +12,22 @@ public class Main {
         int entero = scanner.nextInt();
         return entero;
     }
-    //Daniela se encargara de realizar el metodo mensaje donde va a estar la logica
-    //para determinar si el numero es o no es capicua
+    public static String generarMensaje(int numero){
+        String mensaje;
+        String capicua = "";
+        int n= numero;
+        while(n>0){
+            int digito = n%10;
+            capicua+=digito;
+            n/=10;
+        }
+        if(Integer.parseInt(capicua) == numero){
+            mensaje="El numero ingresado es capicua, "+ numero +"="+capicua;
+        }else{
+            mensaje="el numero ingresado no es capicua.";
+        }
+        return mensaje;
+    }
     public static void mostrarMensaje(String mensaje){
         System.out.println(mensaje);
     }
